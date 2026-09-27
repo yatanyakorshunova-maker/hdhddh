@@ -1,0 +1,17 @@
+--- public/Dockerfile (原始)
+FROM arena-base
+
+# No additional packages needed.
+# Base image provides: Python 3.12, PyTorch 2.14+CUDA, NumPy, Gymnasium,
+# PyYAML, ONNX, pybind11, C++ compiler, mars_rover_env 0.16.0
+
+COPY train.py /submission/train.py
+WORKDIR /submission
+CMD ["python", "train.py"]
+
++++ public/Dockerfile (修改后)
+     1	FROM arena-base
+     2	COPY train.py /submission/train.py
+     3	WORKDIR /submission
+     4	CMD ["python","train.py"]
+     5	
